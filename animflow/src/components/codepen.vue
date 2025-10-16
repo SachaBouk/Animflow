@@ -5,11 +5,10 @@
         </div> -->
         <div class="code-editor">
             <div class="code">
+                <form>
                 <div class="animation-form">
-                    <form>
                         <textarea id="name" type="text" name="name" placeholder="Animation name"></textarea>
                         <textarea id="desc" type="text" name="description" placeholder="Description"></textarea>
-                    </form>
                 </div>
                 <div class="html-code">
                     <h1><img src="./icons/htmlLogo.svg" alt="">HTML</h1>
@@ -24,8 +23,9 @@
                     <!-- <button class="back-btn" @click="goBack">↩️ Retour</button> -->
                     <button @click="runCode">▶️ Run</button>
                     <button @click="pauseAnimation">⏸ Pause</button>
-                    <button>✓ Create</button>
+                    <button type="submit">✓ Create</button>
                 </div>
+            </form>
             </div>
             <iframe id="result"></iframe>
         </div>
@@ -34,6 +34,8 @@
 
 <script>
 export default {
+    
+
     mounted() {
         this.$nextTick(() => {
             // On initialise les éléments seulement après l'affichage
@@ -190,7 +192,7 @@ export default {
 }
 
 .css-code textarea {
-    height: 130%;
+    height: 10rem;
 }
 
 .code textarea::-webkit-scrollbar {
@@ -223,7 +225,7 @@ h1>img {
 .controls {
     justify-content: center;
     text-align: center;
-    margin-top: 8rem;
+    margin-top: 2rem;
 }
 
 .controls button {

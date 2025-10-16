@@ -10,6 +10,32 @@ export default {
 
 </script>
 
+<script setup>
+
+import { onMounted } from 'vue';
+import axios from 'axios';
+
+onMounted(() => {
+  const form = document.querySelector('form');
+  form.onsubmit = async (e) => {
+    // e.preventDefault();
+    const formData = new FormData(form);
+    try {
+      const response = await axios.post('http://localhost:3000/create/animation', {
+        name: formData.get('name'),
+        description: formData.get('description'),
+        html: formData.get('html'),
+        css: formData.get('css')
+      });
+      console.log('API Response:', response.data);
+    } catch (error) {
+      console.error('API Error:', error);
+    }
+  }
+});
+
+</script>
+
 <template>
 
     <div class="HomeStart">
