@@ -19,6 +19,5 @@ footer {
     display: flex;
     background-color:chocolate;
     overflow-y: hidden;
-    
 }
 </style>

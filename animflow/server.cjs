@@ -5,7 +5,12 @@ const express = require('express');
 // eslint-disable-next-line no-undef
 const mongoose = require('mongoose');
 
+// eslint-disable-next-line no-undef
+const cors = require('cors');
+
 const app = express();
+
+app.use(cors())
 app.use(express.json()); // pour recevoir du JSON
 
 // eslint-disable-next-line no-undef
