@@ -31,6 +31,11 @@ onMounted(async () => {
       deleteButton.textContent = `Delete Animation ${item.name}`;
       deleteButton.onclick = () => deleteAnimation(item._id);
       apiResponseDiv.appendChild(deleteButton);
+
+      const editButton = document.createElement('button');
+      editButton.textContent = `Edit Animation ${item.name}`;
+      editButton.onclick = () => editAnimation(item._id);
+      apiResponseDiv.appendChild(editButton);
     });
 
     response.data.forEach(item => {
@@ -44,6 +49,10 @@ onMounted(async () => {
     console.error('API Error:', error);
   }
 });
+
+const editAnimation = async (id) => {
+    window.open(`/testEdit?id=${id}`, '_blank');
+};
 
 const deleteAnimation = async (id) => {
   try {
