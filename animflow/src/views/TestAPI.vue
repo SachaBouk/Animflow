@@ -23,9 +23,41 @@ onMounted(async () => {
     const apiResponseDiv = document.getElementById('api-response');
 
     response.data.forEach(item => {
-      const itemDiv = document.createElement('div');
-      itemDiv.innerHTML = item.html;
-      apiResponseDiv.appendChild(itemDiv);
+
+        // On initialise les éléments seulement après l'affichage
+        const html_code = item.html;
+        console.log(item.html);
+        const css_code = item.css;
+        // create an iframe for each item with their id as id
+        const iframe = document.createElement('iframe');
+        iframe.id = `result-${item._id}`;
+        iframe.style.height = '300px';
+        apiResponseDiv.appendChild(iframe);
+
+        const result = document.querySelector("#result-" + item._id);
+
+          const doc = result.contentDocument || result.contentWindow.document;
+          doc.open();
+          doc.write(`
+        <style>
+          ${css_code}
+          * {
+            animation-iteration-count: infinite !important;
+          }
+          .paused * {
+            animation-play-state: paused !important;
+            transition: none !important;
+          }
+        </style>
+        <body>
+          ${html_code}
+        </body>
+      `);
+          doc.close();
+
+      // const itemDiv = document.createElement('div');
+      // itemDiv.innerHTML = item.html;
+      // apiResponseDiv.appendChild(itemDiv);
 
       const deleteButton = document.createElement('button');
       deleteButton.textContent = `Delete Animation ${item.name}`;
@@ -68,12 +100,23 @@ const deleteAnimation = async (id) => {
 
   <h1>TestAPI</h1>
   <div id="api-response">
-
   </div>
+
 </template>
 
 <style scoped>
-#api-response {
+h1 {
+  color: white;
   margin-top: 170px;
+}
+iframe {
+  border: none;
+}
+#api-response {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
 }
 </style>

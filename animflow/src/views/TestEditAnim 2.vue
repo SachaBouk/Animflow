@@ -1,11 +1,11 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted } from 'vue';
 import axios from 'axios';
 
-const nameInput = ref(null);
-const descriptionInput = ref(null);
-const htmlInput = ref(null);
-const cssInput = ref(null);
+const domName = document.getElementById('name');
+const domDescription = document.getElementById('description');
+const domHtml = document.getElementById('html');
+const domCss = document.getElementById('css');
 
 let params = new URLSearchParams(document.location.search);
 let id = params.get("id");
@@ -13,10 +13,10 @@ let id = params.get("id");
 onMounted(async () => {
   try {
     const response = await axios.get(`http://localhost:3000/show/animation/${id}`);
-    nameInput.value.value = response.data.name;
-    descriptionInput.value.value = response.data.description;
-    htmlInput.value.value = response.data.html;
-    cssInput.value.value = response.data.css;
+    domName.value = response.data.name;
+    domDescription.value = response.data.description;
+    domHtml.value = response.data.html;
+    domCss.value = response.data.css;
     console.log('API Response:', response.data);
   } catch (error) {
     console.error('API Error:', error);
@@ -45,10 +45,10 @@ onMounted(async () => {
 <template>
 
   <form>
-    <input ref="nameInput" type="text" name="name" placeholder="Animation Name" required />
-    <input ref="descriptionInput" type="text" name="description" placeholder="Description" required />
-    <textarea ref="htmlInput" name="html" placeholder="HTML Content" required></textarea>
-    <textarea ref="cssInput" name="css" placeholder="CSS Content" required></textarea>
+    <input id="name" type="text" name="name" placeholder="Animation Name" required />
+    <input id="description" type="text" name="description" placeholder="Description" required />
+    <textarea id="html" name="html" placeholder="HTML Content" required></textarea>
+    <textarea id="css" name="css" placeholder="CSS Content" required></textarea>
     <button type="submit">Edit Animation</button>
   </form>
 </template>
