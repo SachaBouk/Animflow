@@ -5,10 +5,12 @@
         </div> -->
         <div class="code-editor">
             <div class="code">
-                <form>
-                    <input type="text" name="name" placeholder="Project Name" />
-                    <input type="text" name="description" placeholder="Description" />
-                </form>
+                <div class="animation-form">
+                    <form>
+                        <textarea id="name" type="text" name="name" placeholder="Animation name"></textarea>
+                        <textarea id="desc" type="text" name="description" placeholder="Description"></textarea>
+                    </form>
+                </div>
                 <div class="html-code">
                     <h1><img src="./icons/htmlLogo.svg" alt="">HTML</h1>
                     <textarea name="html"></textarea>
@@ -33,29 +35,26 @@
 <script>
 export default {
     mounted() {
+        this.$nextTick(() => {
+            // On initialise les éléments seulement après l'affichage
+            this.html_code = this.$el.querySelector(".html-code textarea");
+            this.css_code = this.$el.querySelector(".css-code textarea");
+            this.result = this.$el.querySelector("#result");
+
+            // this.html_code.value = localStorage.getItem("html_code") || "";
+            // this.css_code.value = localStorage.getItem("css_code") || "";
+
+            this.runCode();
+
+            this.html_code.addEventListener("keyup", this.runCode);
+            this.css_code.addEventListener("keyup", this.runCode);
+        });
     },
     methods: {
-        startEditor() {
-            this.started = true;
-            this.$nextTick(() => {
-                // On initialise les éléments seulement après l'affichage
-                this.html_code = this.$el.querySelector(".html-code textarea");
-                this.css_code = this.$el.querySelector(".css-code textarea");
-                this.result = this.$el.querySelector("#result");
-
-                this.html_code.value = localStorage.getItem("html_code") || "";
-                this.css_code.value = localStorage.getItem("css_code") || "";
-
-                this.runCode();
-
-                this.html_code.addEventListener("keyup", this.runCode);
-                this.css_code.addEventListener("keyup", this.runCode);
-            });
-        },
         runCode() {
             if (!this.result) return;
-            localStorage.setItem("html_code", this.html_code.value);
-            localStorage.setItem("css_code", this.css_code.value);
+            // localStorage.setItem("html_code", this.html_code.value);
+            // localStorage.setItem("css_code", this.css_code.value);
 
             const doc = this.result.contentDocument || this.result.contentWindow.document;
             doc.open();
@@ -149,6 +148,35 @@ export default {
     border-radius: 0 1rem 1rem 0;
     overflow-y: hidden;
 }
+
+.animation-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.animation-form form {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+#name {
+    width: 38%;
+    height: 7rem;
+}
+
+
+
+#desc {
+    width: 60%;
+    height: 7rem;
+}
+
+
 
 .code textarea {
     width: 100%;
