@@ -41,7 +41,7 @@ header {
     position: fixed;
     top: 0;
     z-index: 200;
-    background-color: blue;
+    background-color: black;
 }
 
 .BarHeader {
@@ -87,7 +87,7 @@ a {
 }
 
 #Home h1:hover, #Gallery h1:hover, #Tools h1:hover {
-    color: yellow;
+    color:darkgreen;
     cursor: pointer;
 }
 
