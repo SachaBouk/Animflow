@@ -82,7 +82,6 @@ export default {
             doc.body.classList.toggle("paused");
         },
         goBack() {
-            // 👉 Réinitialise l'interface à la page d'accueil
             this.started = false;
             this.html_code = null;
             this.css_code = null;
@@ -102,15 +101,15 @@ export default {
 
 .code-editor-wrapper {
     font-family: sans-serif;
-    background-image: linear-gradient(45deg, var(--lightblue), var(--blue));
+    /* background-image: linear-gradient(45deg, var(--lightblue), var(--blue)); */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
-    height: 100vh;
+    /* padding: 2rem; */
+    /* height: 100vh; */
 }
 
-/* 🌟 Start screen */
+
 .start-screen {
     text-align: center;
 }
@@ -130,7 +129,7 @@ export default {
     background-color: var(--lightblue);
 }
 
-/* 👇 Éditeur */
+
 .code-editor {
     width: 80%;
     height: 70vh;
