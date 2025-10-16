@@ -91,7 +91,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 :root {
     --darkblue: #14007a;
     --blue: #1a009c;
@@ -161,7 +161,7 @@ export default {
 }
 
 .css-code textarea {
-    height: 130%;
+    height: 17rem;
 }
 
 .code textarea::-webkit-scrollbar {
@@ -194,7 +194,7 @@ h1>img {
 .controls {
     justify-content: center;
     text-align: center;
-    margin-top: 8rem;
+    margin-top: 2rem;
 }
 
 .controls button {
