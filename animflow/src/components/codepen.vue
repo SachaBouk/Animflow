@@ -21,8 +21,8 @@
 
                 <div class="controls">
                     <!-- <button class="back-btn" @click="goBack">↩️ Retour</button> -->
-                    <button @click="runCode">▶️ Run</button>
-                    <button @click="pauseAnimation">⏸ Pause</button>
+                    <button type="button" @click="runCode">▶️ Run</button>
+                    <button type="button" @click="pauseAnimation">⏸ Pause</button>
                     <button type="submit">✓ Create</button>
                 </div>
             </form>
@@ -91,7 +91,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 :root {
     --darkblue: #14007a;
     --blue: #1a009c;

@@ -46,7 +46,7 @@ onMounted(() => {
 
     <div class="createAnimation">
         <div id="title">
-            <h2>Create / Update your own animation</h2>
+            <h2>Create your own animation</h2>
         </div>
 
             <codepen />
