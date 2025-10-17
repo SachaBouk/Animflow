@@ -23,41 +23,42 @@ onMounted(async () => {
     const apiResponseDiv = document.getElementById('api-response');
 
     response.data.forEach(item => {
-
-      // On initialise les éléments seulement après l'affichage
       const html_code = item.html;
-      console.log(item.html);
       const css_code = item.css;
-      // create an iframe for each item with their id as id
+
       const iframe = document.createElement('iframe');
       iframe.id = `result-${item._id}`;
       iframe.style.height = '300px';
       apiResponseDiv.appendChild(iframe);
 
-      const result = document.querySelector("#result-" + item._id);
-
-      const doc = result.contentDocument || result.contentWindow.document;
-      doc.open();
-      doc.write(`
-        <style>
-          ${css_code}
-          * {
-            animation-iteration-count: infinite !important;
-          }
-          .paused * {
-            animation-play-state: paused !important;
-            transition: none !important;
-          }
-        </style>
+      iframe.addEventListener('load', () => {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        doc.open();
+        doc.write(`
+        <!DOCTYPE html>
+        <html lang="fr">
+        <head>
+          <meta charset="UTF-8">
+          <style>
+            ${css_code}
+            * {
+              animation-iteration-count: infinite !important;
+            }
+            .paused * {
+              animation-play-state: paused !important;
+              transition: none !important;
+            }
+          </style>
+        </head>
         <body>
           ${html_code}
         </body>
+        </html>
       `);
-      doc.close();
+        doc.close();
+      });
 
-      // const itemDiv = document.createElement('div');
-      // itemDiv.innerHTML = item.html;
-      // apiResponseDiv.appendChild(itemDiv);
+      iframe.src = 'about:blank';
 
       const deleteButton = document.createElement('button');
       deleteButton.textContent = `Delete Animation ${item.name}`;
@@ -69,13 +70,6 @@ onMounted(async () => {
       editButton.onclick = () => editAnimation(item._id);
       apiResponseDiv.appendChild(editButton);
     });
-
-    response.data.forEach(item => {
-      const css = document.createElement('style');
-      css.type = 'text/css';
-      css.appendChild(document.createTextNode(item.css));
-      document.head.appendChild(css);
-    })
 
   } catch (error) {
     console.error('API Error:', error);
