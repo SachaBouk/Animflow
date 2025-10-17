@@ -1,20 +1,20 @@
 <template>
-    <div class="code-editor-wrapper">
+    <div class="code-editor-wrapper2">
         <div v-if="!started" class="start-screen">
             <button @click="startEditor">Try it yourself !</button>
         </div>
-        <div v-else class="code-editor">
-            <div class="code">
-                <div class="html-code">
+        <div v-else class="code-editor2">
+            <div class="code2">
+                <div class="html-code2">
                     <h1><img src="./icons/htmlLogo.svg" alt="">HTML</h1>
                     <textarea></textarea>
                 </div>
-                <div class="css-code">
+                <div class="css-code2">
                     <h1><img src="./icons/cssLogo.svg" alt="">CSS</h1>
                     <textarea></textarea>
                 </div>
 
-                <div class="controls">
+                <div class="controls2">
                     <button class="back-btn" @click="goBack">↩️ Retour</button>
                     <button @click="runCode">▶️ Run</button>
                     <button @click="pauseAnimation">⏸ Pause</button>
@@ -40,12 +40,12 @@ export default {
             this.started = true;
             this.$nextTick(() => {
                 // On initialise les éléments seulement après l'affichage
-                this.html_code = this.$el.querySelector(".html-code textarea");
-                this.css_code = this.$el.querySelector(".css-code textarea");
+                this.html_code = this.$el.querySelector(".html-code2 textarea");
+                this.css_code = this.$el.querySelector(".css-code2 textarea");
                 this.result = this.$el.querySelector("#result");
 
-                this.html_code.value = localStorage.getItem("html_code") || "";
-                this.css_code.value = localStorage.getItem("css_code") || "";
+                this.html_code.value = localStorage.getItem("html_code2") || "";
+                this.css_code.value = localStorage.getItem("css_code2") || "";
 
                 this.runCode();
 
@@ -55,8 +55,8 @@ export default {
         },
         runCode() {
             if (!this.result) return;
-            localStorage.setItem("html_code", this.html_code.value);
-            localStorage.setItem("css_code", this.css_code.value);
+            localStorage.setItem("html_code2", this.html_code.value);
+            localStorage.setItem("css_code2", this.css_code.value);
 
             const doc = this.result.contentDocument || this.result.contentWindow.document;
             doc.open();
@@ -99,7 +99,7 @@ export default {
     --pink: rgb(255, 40, 113);
 }
 
-.code-editor-wrapper {
+.code-editor-wrapper2 {
     font-family: sans-serif;
     /* background-image: linear-gradient(45deg, var(--lightblue), var(--blue)); */
     display: flex;
@@ -130,7 +130,7 @@ export default {
 }
 
 
-.code-editor {
+.code-editor2 {
     width: 80%;
     height: 70vh;
     display: grid;
@@ -140,7 +140,7 @@ export default {
     overflow: hidden;
 }
 
-.code {
+.code2 {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     background-color: var(--darkblue);
@@ -149,7 +149,7 @@ export default {
     overflow-y: hidden;
 }
 
-.code textarea {
+.code2 textarea {
     width: 100%;
     height: calc(100% - 3rem);
     background-color: var(--blue);
@@ -160,15 +160,15 @@ export default {
     resize: vertical;
 }
 
-.css-code textarea {
+.css-code2 textarea {
     height: 17rem;
 }
 
-.code textarea::-webkit-scrollbar {
+.code2 textarea::-webkit-scrollbar {
     width: .4rem;
 }
 
-.code textarea::-webkit-scrollbar-thumb {
+.code2 textarea::-webkit-scrollbar-thumb {
     background-color: var(--pink);
     border-radius: .4rem;
 }
@@ -191,13 +191,13 @@ h1>img {
     vertical-align: middle;
 }
 
-.controls {
+.controls2 {
     justify-content: center;
     text-align: center;
     margin-top: 2rem;
 }
 
-.controls button {
+.controls2 button {
     background-color: var(--lightblue);
     border: none;
     color: #fff;
@@ -209,15 +209,15 @@ h1>img {
     transition: background-color .3s;
 }
 
-.controls button:hover {
+.controls2 button:hover {
     background-color: var(--pink);
 }
 
-.controls .back-btn {
+.controls2 .back-btn {
   background-color: var(--pink);
 }
 
-.controls .back-btn:hover {
+.controls2 .back-btn:hover {
   background-color: var(--lightblue);
 }
 
