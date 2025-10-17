@@ -18,7 +18,7 @@ import axios from 'axios';
 onMounted(() => {
   const form = document.querySelector('form');
   form.onsubmit = async (e) => {
-    //e.preventDefault();
+    // e.preventDefault();
     const formData = new FormData(form);
     try {
       const response = await axios.post('http://localhost:3000/create/animation', {
@@ -48,7 +48,7 @@ onMounted(() => {
         <div id="title">
             <h2>Create / Update your own animation</h2>
         </div>
- 
+
             <codepen />
 
     </div>
