@@ -5,3 +5,59 @@ body {
   height: 100%;
   width: 100%;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
+/* Titres  */
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+/* Sous - Titres  */
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* Textes  */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+/* Code  */
+
+.bbh-sans-hegarty-regular {
+  font-family: "BBH Sans Hegarty", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rammetto-one-regular {
+  font-family: "Rammetto One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gfs-neohellenic-regular {
+  font-family: "GFS Neohellenic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.google-sans-code {
+  font-family: "Google Sans Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1{
+  font-family: "BBH Sans Hegarty", sans-serif;
+  color: blue;
+  font-weight: 900;
+}
+
+h2, h3{
+  font-family: "Rammetto One", sans-serif;
+  font-weight: 700;
+}
+
+p{
+  font-family: "GFS Neohellenic", sans-serif;
+  font-weight: 400;
+}
+
+
+code, pre{
+  font-family: "Google Sans Code", monospace;
+  font-weight: 900;
+}

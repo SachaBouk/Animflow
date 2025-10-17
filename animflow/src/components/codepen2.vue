@@ -11,7 +11,7 @@
                 </div>
                 <div class="css-code2">
                     <h1><img src="./icons/cssLogo.svg" alt="">CSS</h1>
-                    <textarea></textarea>
+                    <textarea value=""></textarea>
                 </div>
 
                 <div class="controls2">
