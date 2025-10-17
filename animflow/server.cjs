@@ -18,8 +18,8 @@ mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-  .then(() => console.log('Connecté à MongoDB !'))
-  .catch(err => console.error('Erreur de connexion MongoDB:', err));
+  .then(() => console.log('Connected to MongoDB !'))
+  .catch(err => console.error('MongoDB connection error :', err));
 
 // Exemple de modèle Mongoose
 const AnimationSchema = new mongoose.Schema({
@@ -100,5 +100,5 @@ app.delete('/delete/animation/:id', async (req, res) => {
 // eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Serveur lancé sur le port ${PORT}`);
+  console.log(`Server launched at port : ${PORT}`);
 });

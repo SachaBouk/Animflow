@@ -25,11 +25,6 @@ const router = createRouter({
       component: Toolsview
     },
     {
-      path:"/test",
-      name:"test",
-      component: TestAPI
-    },
-    {
       path:"/testCreate",
       name:"testCreate",
       component: TestCreateAnim
