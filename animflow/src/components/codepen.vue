@@ -7,16 +7,16 @@
             <div class="code">
                 <form>
                 <div class="animation-form">
-                        <textarea id="name" type="text" name="name" placeholder="Animation name"></textarea>
-                        <textarea id="desc" type="text" name="description" placeholder="Description"></textarea>
+                        <textarea id="name" ref="nameInput" type="text" name="name" placeholder="Animation name"></textarea>
+                        <textarea id="desc" ref="descriptionInput" type="text" name="description" placeholder="Description"></textarea>
                 </div>
                 <div class="html-code">
                     <h1><img src="./icons/htmlLogo.svg" alt="">HTML</h1>
-                    <textarea name="html"></textarea>
+                    <textarea id="html" ref="htmlInput" name="html"></textarea>
                 </div>
                 <div class="css-code">
                     <h1><img src="./icons/cssLogo.svg" alt="">CSS</h1>
-                    <textarea name="css"></textarea>
+                    <textarea id="css" ref="cssInput" name="css"></textarea>
                 </div>
 
                 <div class="controls">

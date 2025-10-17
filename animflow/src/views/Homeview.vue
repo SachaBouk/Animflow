@@ -1,9 +1,9 @@
 <script>
-import codepen2 from '@/components/codepen2.vue';
+import Codepen2 from '@/components/codepen2.vue';
 
 export default {
   components: {
-    codepen2
+    codepen2: Codepen2
   }
 }
 </script>
@@ -105,7 +105,7 @@ body {
   justify-content: space-around;
   align-items: center;
   padding-bottom: 30px;
-  
+
 }
 
 .codeSnippet {

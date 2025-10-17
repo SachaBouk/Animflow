@@ -4,7 +4,7 @@ import Galleryview from '@/views/Galleryview.vue'
 import Toolsview from '@/views/Toolsview.vue'
 import TestAPI from '@/views/TestAPI.vue'
 import TestCreateAnim from '@/views/TestCreateAnim.vue'
-import TestEditAnim from '@/views/TestEditAnim.vue'
+import EditAnim from '@/views/EditAnim.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,9 +30,9 @@ const router = createRouter({
       component: TestCreateAnim
     },
     {
-      path:"/testEdit",
-      name:"testEdit",
-      component: TestEditAnim
+      path:"/edit",
+      name:"Edit",
+      component: EditAnim
     }
 
 

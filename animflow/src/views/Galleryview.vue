@@ -26,10 +26,27 @@ onMounted(async () => {
       const html_code = item.html;
       const css_code = item.css;
 
+      const div = document.createElement('div');
+      div.id = `animation-container-${item._id}`;
+      div.style = `
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        padding: 8px;
+        background-color: Black;
+        border-radius: 8px;
+        overflow: hidden;
+      `
+      apiResponseDiv.appendChild(div);
+
       const iframe = document.createElement('iframe');
       iframe.id = `result-${item._id}`;
+      iframe.style.width = '300px';
       iframe.style.height = '300px';
-      apiResponseDiv.appendChild(iframe);
+      iframe.style.overflow = 'hidden';
+      iframe.setAttribute('frameBorder', 0);
+      div.appendChild(iframe);
 
       iframe.addEventListener('load', () => {
         const doc = iframe.contentDocument || iframe.contentWindow.document;
@@ -43,6 +60,9 @@ onMounted(async () => {
             ${css_code}
             * {
               animation-iteration-count: infinite !important;
+            }
+            body {
+                overflow: hidden;
             }
             .paused * {
               animation-play-state: paused !important;
@@ -63,12 +83,12 @@ onMounted(async () => {
       const deleteButton = document.createElement('button');
       deleteButton.textContent = `Delete Animation ${item.name}`;
       deleteButton.onclick = () => deleteAnimation(item._id);
-      apiResponseDiv.appendChild(deleteButton);
+      div.appendChild(deleteButton);
 
       const editButton = document.createElement('button');
       editButton.textContent = `Edit Animation ${item.name}`;
       editButton.onclick = () => editAnimation(item._id);
-      apiResponseDiv.appendChild(editButton);
+      div.appendChild(editButton);
     });
 
   } catch (error) {
@@ -77,7 +97,7 @@ onMounted(async () => {
 });
 
 const editAnimation = async (id) => {
-  window.open(`/testEdit?id=${id}`, '_blank');
+  window.open(`/Edit?id=${id}`, '_self');
 };
 
 const deleteAnimation = async (id) => {
@@ -108,9 +128,12 @@ iframe {
 }
 #api-response {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }
 </style>
