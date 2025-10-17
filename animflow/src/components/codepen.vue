@@ -34,17 +34,13 @@
 
 <script>
 export default {
-    
-
+    name: "CodePen",
     mounted() {
         this.$nextTick(() => {
             // On initialise les éléments seulement après l'affichage
             this.html_code = this.$el.querySelector(".html-code textarea");
             this.css_code = this.$el.querySelector(".css-code textarea");
             this.result = this.$el.querySelector("#result");
-
-            // this.html_code.value = localStorage.getItem("html_code") || "";
-            // this.css_code.value = localStorage.getItem("css_code") || "";
 
             this.runCode();
 
@@ -55,8 +51,6 @@ export default {
     methods: {
         runCode() {
             if (!this.result) return;
-            // localStorage.setItem("html_code", this.html_code.value);
-            // localStorage.setItem("css_code", this.css_code.value);
 
             const doc = this.result.contentDocument || this.result.contentWindow.document;
             doc.open();
@@ -109,27 +103,6 @@ export default {
     /* height: 100vh; */
 }
 
-
-/* .start-screen {
-    text-align: center;
-}
-
-.start-screen button {
-    background-color: var(--pink);
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-    border-radius: .5rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.start-screen button:hover {
-    background-color: var(--lightblue);
-} */
-
-
 .code-editor {
     width: 95%;
     height: 70vh;
@@ -163,7 +136,6 @@ export default {
     display: flex;
     justify-content: space-around;
 }
-
 
 
 #name {
