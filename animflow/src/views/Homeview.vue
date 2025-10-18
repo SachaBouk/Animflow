@@ -230,7 +230,7 @@ body {
   font-size: 6rem;
   color: white;
   font-family: "BBH Sans Hegarty", sans-serif;
-
+  /* letter-spacing: .7rem; */
 }
 
 #introText {
@@ -243,7 +243,7 @@ body {
 }
 
 #scrollDown {
-  transform: translateY(45px);
+  transform: translateY(55px);
 }
 
 
