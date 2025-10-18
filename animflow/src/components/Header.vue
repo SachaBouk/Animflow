@@ -9,17 +9,17 @@
                 <div class="linksAlign">
                     <div id="Home">
                         <RouterLink :to="{ name: 'home' }">
-                            <h1>Home</h1>
+                            <h1 class="hover-underline-animation">Home</h1>
                         </RouterLink>
                     </div>
                     <div id="Gallery">
                         <RouterLink :to="{ name: 'gallery' }">
-                            <h1>Gallery</h1>
+                            <h1 class="hover-underline-animation">Gallery</h1>
                         </RouterLink>
                     </div>
                     <div id="Tools">
                         <RouterLink :to="{ name: 'tools' }">
-                            <h1>Tools</h1>
+                            <h1 class="hover-underline-animation">Tools</h1>
                         </RouterLink>
                     </div>
                 </div>
@@ -35,13 +35,22 @@
 
 
 <style scoped>
+
+:root {
+  --darkblue: #14007a;
+  --blue: #1a009c;
+  --lightblue: rgb(74, 255, 255);
+  --pink: rgb(255, 40, 113);
+}
+
 header {
     width: 100%;
     margin: 0;
     position: fixed;
     top: 0;
     z-index: 200;
-    background-color: black;
+    background-image:linear-gradient(45deg, var(--lightblue), var(--blue));
+    border-bottom: 2px solid black;
 }
 
 .BarHeader {
@@ -86,11 +95,34 @@ a {
     font-size: 1em;
 }
 
-#Home h1:hover, #Gallery h1:hover, #Tools h1:hover {
-    color:darkgreen;
-    cursor: pointer;
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
 }
 
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -7px;
+  left: 0;
+  background-color: #fff;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+}
+
+.hover-underline-animation.center::after {
+  transform-origin: bottom center;
+}
+
+.hover-underline-animation.center:hover::after {
+  transform-origin: bottom center;
+}
 
 
 
