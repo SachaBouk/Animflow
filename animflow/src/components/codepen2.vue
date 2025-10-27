@@ -58,7 +58,6 @@ export default {
         startEditor() {
             this.started = true;
             this.$nextTick(() => {
-                // On initialise les éléments seulement après l'affichage
                 this.html_code = this.$el.querySelector(".html-code2 textarea");
                 this.css_code = this.$el.querySelector(".css-code2 textarea");
                 this.result = this.$el.querySelector("#result");

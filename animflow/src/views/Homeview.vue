@@ -16,8 +16,15 @@ onMounted(async () => {
   }
 
   try {
-    const response = await axios.get(`http://localhost:3000/show/animation/68f0eb2d306db32434f6c51f`);
+    const response = await axios.get(`http://localhost:3000/show/animation/68f0f871306db32434f6c529`);
     animation2.value = response.data;
+  } catch (error) {
+    console.error('API Error:', error);
+  }
+
+  try {
+    const response = await axios.get(`http://localhost:3000/show/animation/68f20ec584f9961cdc2eca6f`);
+    animation3.value = response.data;
   } catch (error) {
     console.error('API Error:', error);
   }
@@ -95,7 +102,7 @@ export default {
       </div>
     </div>
     <div id="codepen">
-      <codepen2 />
+      <codepen-homepage :initial-data="animation1"/>
     </div>
   </div>
 
@@ -129,7 +136,7 @@ export default {
       </div>
     </div>
     <div id="codepen">
-      <codepen2 />
+      <codepen-homepage :initial-data="animation2"/>
     </div>
   </div>
 
@@ -163,7 +170,7 @@ export default {
       </div>
     </div>
     <div id="codepen">
-      <codepen2 />
+      <codepen-homepage :initial-data="animation3"/>
     </div>
   </div>
 
