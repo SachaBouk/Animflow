@@ -1,3 +1,29 @@
+<script setup>
+import { onMounted, ref } from 'vue';
+import axios from 'axios';
+import codepenHomepage   from '@/components/codepen-homepage.vue'
+
+const animation1 = ref({ name: '', description: '', html: '', css: '' });
+const animation2 = ref({ name: '', description: '', html: '', css: '' });
+const animation3 = ref({ name: '', description: '', html: '', css: '' });
+
+onMounted(async () => {
+  try {
+    const response = await axios.get(`http://localhost:3000/show/animation/68f0eb2d306db32434f6c51f`);
+    animation1.value = response.data;
+  } catch (error) {
+    console.error('API Error:', error);
+  }
+
+  try {
+    const response = await axios.get(`http://localhost:3000/show/animation/68f0eb2d306db32434f6c51f`);
+    animation2.value = response.data;
+  } catch (error) {
+    console.error('API Error:', error);
+  }
+});
+</script>
+
 <script>
 import codepen2 from '@/components/codepen2.vue';
 import MouseScroll from "@/components/MouseScroll.vue";

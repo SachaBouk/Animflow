@@ -1,7 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import axios from 'axios';
-import codepen from '@/components/codepen.vue';
 import CodepenEdit from '@/components/codepenEdit.vue'
 
 const animation = ref({ name: '', description: '', html: '', css: '' });
