@@ -21,9 +21,9 @@
 
                 <div class="controls">
                     <!-- <button class="back-btn" @click="goBack">↩️ Retour</button> -->
-                    <button type="button" @click="runCode">▶️ Run</button>
-                    <button type="button" @click="pauseAnimation">⏸ Pause</button>
-                    <button type="submit">✓ Create</button>
+                    <button type="button" @click="runCode">Run</button>
+                    <button type="button" @click="pauseAnimation">Pause</button>
+                    <button type="submit">Create</button>
                 </div>
             </form>
             </div>
@@ -104,24 +104,26 @@ export default {
 }
 
 .code-editor {
-    width: 95%;
-    height: 70vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: #fff;
-    border-radius: 1rem;
-    overflow: hidden;
-    margin-top: 3rem;
-    margin-bottom: 15rem;
+  width: 97%;
+  height: 83vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--blue);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 2px solid var(--lightblue);
+  margin-top: 2rem;
+  margin-bottom: 5rem;
 }
 
 .code {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    background-color: var(--darkblue);
-    padding: 1rem;
-    border-radius: 0 1rem 1rem 0;
-    overflow-y: hidden;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  background-color: var(--darkblue);
+  padding: 1rem;
+  overflow-y: hidden;
+  border-right: 2px solid var(--lightblue);
+
 }
 
 .animation-form {
@@ -153,27 +155,32 @@ export default {
 
 
 .code textarea {
-    width: 100%;
-    height: calc(100% - 3rem);
-    background-color: var(--blue);
-    color: var(--lightblue);
-    border: none;
-    padding: 1rem;
-    font-size: 1.1rem;
-    resize: vertical;
+  width: 100%;
+  height: calc(100% - 3rem);
+  background-color: var(--blue);
+  color: var(--lightblue);
+  border: 1px solid var(--lightblue);
+  padding: 1rem;
+  font-size: 1.1rem;
+  resize: vertical;
+  border-radius: .5rem;
 }
 
 .css-code textarea {
-    height: 10rem;
+  height: 17rem;
 }
 
 .code textarea::-webkit-scrollbar {
-    width: .4rem;
+  width: .4rem;
 }
 
 .code textarea::-webkit-scrollbar-thumb {
-    background-color: var(--pink);
-    border-radius: .4rem;
+  background-color: var(--pink);
+  border-radius: .4rem;
+}
+
+.html-code{
+  margin-bottom: 1rem;
 }
 
 #result {
@@ -219,4 +226,5 @@ h1>img {
   background-color: #fff;
   color: #14007a;
 }
+
 </style>

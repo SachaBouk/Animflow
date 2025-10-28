@@ -46,7 +46,7 @@ onMounted(() => {
         <h1>ON</h1>
         <h1>TOOLS</h1>
         <div id="introText">
-            <p>Didn’t find what you were looking for? The Tools page lets you design and customize your own CSS
+            <p>Didn’t find what you were looking for ? The Tools page lets you design and customize your own CSS
                 animations from scratch. Experiment, preview your effects in real time, and bring your creative ideas to
                 life directly on AnimFlow. ⚙️✨</p>
         </div>
