@@ -749,9 +749,9 @@ body {
   font-size: 1.2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
-  max-height: 300px;     /* hauteur maximale du bloc */
-  overflow-y: auto;       /* défilement vertical */
-  overflow-x: auto;       /* défilement horizontal si besoin */
+  max-height: 300px;     
+  overflow-y: auto;       
+  overflow-x: auto;       
   scrollbar-width: thin;
 }
 
@@ -759,7 +759,7 @@ code,
 pre {
   user-select: text;
   cursor: text;
-  white-space: pre;       /* garde la mise en forme */
+  white-space: pre;       
   margin: 0;
 }
 
