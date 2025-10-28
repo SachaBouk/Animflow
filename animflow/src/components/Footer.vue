@@ -1,7 +1,7 @@
 <template>
 
     <footer>
-
+        <h3>AnimFlow © 2024</h3>
 
     </footer>
 
@@ -12,7 +12,7 @@
 
 <style>
 footer {
-    height: 10%;
+    height: 100%;
     width: 100%;
     z-index: 50;
     position: relative;

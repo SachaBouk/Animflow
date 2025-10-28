@@ -74,18 +74,18 @@ export default {
       <div class="codeSnippet">
         <pre>
       <code class="language-css">
+    
+  circle {
 
-      div {
-        width: 50px;
-        height: 50px;
-        background: black;
-        animation: move 2s linear;
-      }
-
-      @keyframes move {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(200px); }
-      }
+    fill: none;
+    stroke-width: 3.5;
+    animation-name: preloader;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: 170px 170px;
+    will-change: transform;
+  }
 
       </code>
     </pre>
@@ -117,17 +117,18 @@ export default {
         <pre>
       <code class="language-css">
 
-      div {
-        width: 50px;
-        height: 50px;
-        background: black;
-        animation: move 2s linear;
-      }
-
-      @keyframes move {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(200px); }
-      }
+  .letter-image {
+    
+      margin-left: 5%;
+      top: 50%;
+      left: 100%;
+      width: 200px; 
+      height: 200px;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform: translate(-50%, -10%);    
+      cursor: pointer;
+   }
 
       </code>
     </pre>
@@ -166,17 +167,24 @@ export default {
         <pre>
       <code class="language-css">
 
-      div {
-        width: 50px;
-        height: 50px;
-        background: black;
-        animation: move 2s linear;
-      }
+    .truck,.wheels {
+      transition: all ease;
+      width: 85px;
+      margin-right: -60px;
+      bottom: 0px;
+      right: 50%;
+      position: absolute;
+      background: #eee;
+    }
 
-      @keyframes move {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(200px); }
-      }
+    .truck:before {
+      content: " ";
+      position: absolute;
+      width: 25px;
+      box-shadow:
+      -30px 28px 0 1.5px #fff,
+      -35px 18px 0 1.5px #fff;
+    }
 
       </code>
     </pre>
