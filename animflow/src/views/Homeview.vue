@@ -108,7 +108,7 @@ export default {
 
 
   <div id="exampleAnimationTitle">
-    <h3>Loading Circle</h3>
+    <h3>Mail Button</h3>
     <div id="line"></div>
   </div>
   <div class="codeSection">
@@ -157,7 +157,7 @@ export default {
 
 
   <div id="exampleAnimationTitle">
-    <h3>Loading Circle</h3>
+    <h3>Speedy Truck</h3>
     <div id="line"></div>
   </div>
   <div class="codeSection">
