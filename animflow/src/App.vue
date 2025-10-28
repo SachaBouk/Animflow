@@ -37,8 +37,8 @@ export default {
 #app {
   display: flex;
   flex-direction: column;
-  height: 100%; 
-  width: 100%;  
+  height: 100%;
+  width: 100%;
 }
 
 header {
@@ -53,7 +53,6 @@ main {
 }
 
 footer {
-  height: 20%;
   width: 100%;
 }
 

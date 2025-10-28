@@ -195,32 +195,28 @@ h1>img {
 }
 
 .controls {
-    justify-content: center;
-    text-align: center;
-    margin-top: 2rem;
+  justify-content: center;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .controls button {
-    background-color: var(--lightblue);
-    border: none;
-    color: #fff;
-    padding: .7rem 2rem;
-    font-size: 1.1rem;
-    border-radius: .5rem;
-    cursor: pointer;
-    margin: 0 1rem;
-    transition: background-color .3s;
+  /* background-color: var(--lightblue); */
+  border: 2px solid var(--lightblue);
+  background-color: transparent;
+  color: #fff;
+  padding: .7rem 2rem;
+  font-size: 1.1rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  margin: 0 1rem;
+  transition: background-color .4s;
+  font-family: "Rammetto One", sans-serif;
+
 }
 
 .controls button:hover {
-    background-color: var(--pink);
-}
-
-.controls .back-btn {
-    background-color: var(--pink);
-}
-
-.controls .back-btn:hover {
-    background-color: var(--lightblue);
+  background-color: #fff;
+  color: #14007a;
 }
 </style>

@@ -69,6 +69,7 @@ onMounted(async () => {
         border: 1px solid rgb(74, 255, 255);
         border-radius: 8px;
         overflow: hidden;
+        width: 25vw;
       `
       apiResponseDiv.appendChild(div);
 
@@ -138,6 +139,7 @@ const deleteAnimation = async (id) => {
   try {
     const response = await axios.delete(`http://localhost:3000/delete/animation/${id}`);
     console.log('Delete Response:', response.data);
+    window.location.reload();
   } catch (error) {
     console.error('Delete Error:', error);
   }
@@ -200,6 +202,5 @@ button:hover {
   margin-top: 20px;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
 }
 </style>

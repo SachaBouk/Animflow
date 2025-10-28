@@ -1,8 +1,7 @@
 <template>
 
     <footer>
-        <h3>AnimFlow © 2024</h3>
-
+        <h3>AnimFlow © 2025</h3>
     </footer>
 
 
@@ -12,12 +11,16 @@
 
 <style>
 footer {
-    height: 100%;
+    height: 25vh;
     width: 100%;
     z-index: 50;
     position: relative;
     display: flex;
-    background-color:chocolate;
+    margin-top: 16px;
+    background-color:black;
+    color: white;
     overflow-y: hidden;
+    align-items: center;
+  justify-content: center;
 }
 </style>

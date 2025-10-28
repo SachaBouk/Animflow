@@ -18,7 +18,7 @@ import axios from 'axios';
 onMounted(() => {
   const form = document.querySelector('form');
   form.onsubmit = async (e) => {
-    //e.preventDefault();
+    e.preventDefault();
     const formData = new FormData(form);
     try {
       const response = await axios.post('http://localhost:3000/create/animation', {
@@ -27,6 +27,7 @@ onMounted(() => {
         html: formData.get('html'),
         css: formData.get('css')
       });
+      window.location.reload();
       console.log('API Response:', response.data);
     } catch (error) {
       console.error('API Error:', error);
@@ -48,7 +49,7 @@ onMounted(() => {
         <div id="title">
             <h2>Create your own animation</h2>
         </div>
- 
+
             <codepen />
 
     </div>
