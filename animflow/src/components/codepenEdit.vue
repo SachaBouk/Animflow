@@ -130,15 +130,16 @@ export default {
 }
 
 .code-editor {
-  width: 95%;
-  height: 70vh;
+  width: 97%;
+  height: 83vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background-color: #fff;
+  background-color: var(--blue);
   border-radius: 1rem;
   overflow: hidden;
-  margin-top: 3rem;
-  margin-bottom: 15rem;
+  border: 2px solid var(--lightblue);
+  margin-top: 2rem;
+  margin-bottom: 5rem;
 }
 
 .code {
@@ -146,8 +147,9 @@ export default {
   grid-template-rows: repeat(3, 1fr);
   background-color: var(--darkblue);
   padding: 1rem;
-  border-radius: 0 1rem 1rem 0;
   overflow-y: hidden;
+  border-right: 2px solid var(--lightblue);
+
 }
 
 .animation-form {
@@ -183,14 +185,15 @@ export default {
   height: calc(100% - 3rem);
   background-color: var(--blue);
   color: var(--lightblue);
-  border: none;
+  border: 1px solid var(--lightblue);
   padding: 1rem;
   font-size: 1.1rem;
   resize: vertical;
+  border-radius: .5rem;
 }
 
 .css-code textarea {
-  height: 10rem;
+  height: 17rem;
 }
 
 .code textarea::-webkit-scrollbar {
@@ -200,6 +203,10 @@ export default {
 .code textarea::-webkit-scrollbar-thumb {
   background-color: var(--pink);
   border-radius: .4rem;
+}
+
+.html-code{
+  margin-bottom: 1rem;
 }
 
 #result {
@@ -226,27 +233,29 @@ h1>img {
   margin-top: 2rem;
 }
 
+.controls {
+  justify-content: center;
+  text-align: center;
+  margin-top: 1rem;
+}
+
 .controls button {
-  background-color: var(--lightblue);
-  border: none;
+  /* background-color: var(--lightblue); */
+  border: 2px solid var(--lightblue);
+  background-color: transparent;
   color: #fff;
   padding: .7rem 2rem;
   font-size: 1.1rem;
   border-radius: .5rem;
   cursor: pointer;
   margin: 0 1rem;
-  transition: background-color .3s;
+  transition: background-color .4s;
+  font-family: "Rammetto One", sans-serif;
+
 }
 
 .controls button:hover {
-  background-color: var(--pink);
-}
-
-.controls .back-btn {
-  background-color: var(--pink);
-}
-
-.controls .back-btn:hover {
-  background-color: var(--lightblue);
+  background-color: #fff;
+  color: #14007a;
 }
 </style>
