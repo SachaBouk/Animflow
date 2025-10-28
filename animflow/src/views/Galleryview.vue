@@ -15,6 +15,37 @@ Supprimer une animation par ID : DELETE /delete/animation/:id
 Voilà bisous Sacha <3
 */
 
+const style = document.createElement('style');
+style.textContent = `
+  .dynamic-btn {
+    border: 2px solid var(--lightblue);
+    background-color: transparent;
+    color: #fff;
+    padding: .7rem 2rem;
+    font-size: 0.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    margin: 0 1rem;
+    transition: background-color .4s;
+    font-family: "Rammetto One", sans-serif;
+  }
+
+  .dynamic-btn:hover {
+    background-color: #fff;
+    color: #14007a;
+  }
+
+  .del-btn {
+    border: 2px solid var(--pink);
+  }
+
+  .del-btn:hover {
+    background-color: #fff;
+    color: rgb(255, 40, 113);
+  }
+`;
+document.head.appendChild(style);
+
 onMounted(async () => {
   try {
     const response = await axios.get('http://localhost:3000/show/animation');
@@ -34,7 +65,8 @@ onMounted(async () => {
         gap: 8px;
         align-items: center;
         padding: 8px;
-        background-color: Black;
+        background-color: #14007a;
+        border: 1px solid rgb(74, 255, 255);
         border-radius: 8px;
         overflow: hidden;
       `
@@ -80,15 +112,17 @@ onMounted(async () => {
 
       iframe.src = 'about:blank';
 
-      const deleteButton = document.createElement('button');
-      deleteButton.textContent = `Delete Animation ${item.name}`;
-      deleteButton.onclick = () => deleteAnimation(item._id);
-      div.appendChild(deleteButton);
-
       const editButton = document.createElement('button');
       editButton.textContent = `Edit Animation ${item.name}`;
+      editButton.className = 'dynamic-btn';
       editButton.onclick = () => editAnimation(item._id);
       div.appendChild(editButton);
+
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = `Delete Animation ${item.name}`;
+      deleteButton.className = 'del-btn dynamic-btn';
+      deleteButton.onclick = () => deleteAnimation(item._id);
+      div.appendChild(deleteButton);
     });
 
   } catch (error) {
@@ -112,7 +146,7 @@ const deleteAnimation = async (id) => {
 
 <template>
 
-  <h1>TestAPI</h1>
+  <h1 id="title">All CSS Animations</h1>
   <div id="api-response">
   </div>
 
@@ -123,9 +157,41 @@ h1 {
   color: white;
   margin-top: 170px;
 }
-iframe {
-  border: none;
+#title {
+  text-align: center;
+  margin-bottom: 64px;
 }
+
+button {
+  /* background-color: var(--lightblue); */
+  border: 2px solid var(--lightblue);
+  background-color: transparent;
+  color: #fff;
+  padding: .7rem 2rem;
+  font-size: 1.1rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  margin: 0 1rem;
+  transition: background-color .4s;
+  font-family: "Rammetto One", sans-serif;
+
+}
+
+button:hover {
+  background-color: #fff;
+  color: #14007a;
+}
+
+.del-btn {
+  background-color: transparent;
+  border: 2px solid var(--pink);
+}
+
+.del-btn:hover {
+  background-color: #fff;
+  color: rgb(255, 40, 113);
+}
+
 #api-response {
   display: flex;
   flex-direction: row;
