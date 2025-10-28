@@ -1,11 +1,13 @@
 <script>
 
 import codepen from '@/components/codepen.vue';
+import MouseScroll from '@/components/MouseScroll.vue';
 
 export default {
-  components: {
-    codepen
-  }
+    components: {
+        codepen,
+        MouseScroll
+    }
 }
 
 </script>
@@ -16,23 +18,23 @@ import { onMounted } from 'vue';
 import axios from 'axios';
 
 onMounted(() => {
-  const form = document.querySelector('form');
-  form.onsubmit = async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    try {
-      const response = await axios.post('http://localhost:3000/create/animation', {
-        name: formData.get('name'),
-        description: formData.get('description'),
-        html: formData.get('html'),
-        css: formData.get('css')
-      });
-      window.location.reload();
-      console.log('API Response:', response.data);
-    } catch (error) {
-      console.error('API Error:', error);
+    const form = document.querySelector('form');
+    form.onsubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        try {
+            const response = await axios.post('http://localhost:3000/create/animation', {
+                name: formData.get('name'),
+                description: formData.get('description'),
+                html: formData.get('html'),
+                css: formData.get('css')
+            });
+            window.location.reload();
+            console.log('API Response:', response.data);
+        } catch (error) {
+            console.error('API Error:', error);
+        }
     }
-  }
 });
 
 </script>
@@ -43,14 +45,25 @@ onMounted(() => {
         <h1>WELCOME</h1>
         <h1>ON</h1>
         <h1>TOOLS</h1>
+        <div id="introText">
+            <p>Didn’t find what you were looking for? The Tools page lets you design and customize your own CSS
+                animations from scratch. Experiment, preview your effects in real time, and bring your creative ideas to
+                life directly on AnimFlow. ⚙️✨</p>
+        </div>
+        <div id="scrollDown">
+            <MouseScroll />
+        </div>
     </div>
+
 
     <div class="createAnimation">
         <div id="title">
             <h2>Create your own animation</h2>
+            <div id="Titleline"></div>
         </div>
 
-            <codepen />
+
+        <codepen />
 
     </div>
 
@@ -68,8 +81,20 @@ onMounted(() => {
 
 h2 {
     font: 600 4rem 'sans-serif';
-    color: black;
+    color: #fff;
     margin-top: 3rem;
     margin-left: 2rem;
+}
+
+.createAnimation {
+    margin-top: 10rem;
+}
+
+#Titleline {
+  width: 67.5rem;
+  height: 4px;
+  background-color: white;
+  margin-top: 10px;
+  margin-left: 2rem;
 }
 </style>
