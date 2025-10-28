@@ -1,0 +1,1713 @@
+"_id","name","description","html","css","createdAt","__v"
+"ObjectId(""68f0eb2d306db32434f6c51f"")","Loading circle","Circles for loadings on your website","<div class=""container"">
+  
+  <svg class=""loader"" xmlns=""http://www.w3.org/2000/svg"" viewBox=""0 0 340 340"">
+     <circle cx=""170"" cy=""170"" r=""160"" stroke=""#E2007C""/>
+     <circle cx=""170"" cy=""170"" r=""135"" stroke=""#404041""/>
+     <circle cx=""170"" cy=""170"" r=""110"" stroke=""#E2007C""/>
+     <circle cx=""170"" cy=""170"" r=""85"" stroke=""#404041""/>
+  </svg>
+  
+</div>","body{
+  overflow-y:hidden
+}
+
+.container {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 min-height: 100vh;
+	 background-color: #ededed;
+}
+ .loader {
+	 max-width: 15rem;
+	 width: 100%;
+	 height: auto;
+	 stroke-linecap: round;
+}
+ circle {
+	 fill: none;
+	 stroke-width: 3.5;
+	 animation-name: preloader;
+	 animation-duration: 3s;
+	 animation-iteration-count: infinite;
+	 animation-timing-function: ease-in-out;
+	 transform-origin: 170px 170px;
+	 will-change: transform;
+}
+ circle:nth-of-type(1) {
+	 stroke-dasharray: 550px;
+}
+ circle:nth-of-type(2) {
+	 stroke-dasharray: 500px;
+}
+ circle:nth-of-type(3) {
+	 stroke-dasharray: 450px;
+}
+ circle:nth-of-type(4) {
+	 stroke-dasharray: 300px;
+}
+ circle:nth-of-type(1) {
+	 animation-delay: -0.15s;
+}
+ circle:nth-of-type(2) {
+	 animation-delay: -0.3s;
+}
+ circle:nth-of-type(3) {
+	 animation-delay: -0.45s;
+}
+ circle:nth-of-type(4) {
+	 animation-delay: -0.6s;
+}
+ @keyframes preloader {
+	 50% {
+		 transform: rotate(360deg);
+	}
+}","2025-10-16T12:55:09.680Z",0
+"ObjectId(""68f0f4dc306db32434f6c523"")","Pure CSS Koi Fish","Des petits koi tout mignons qui se balade dans l'eau","<div class=""fish"">
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+</div>
+<div class=""fish"">
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+  <div class=""koiCoil""></div>
+</div>
+<div class=""seaLevel""></div>",":root {
+  --coilSize: 14px;
+  --delayCount: 40ms;
+  --scaleMe: 1;
+
+  --scaleFlip: 1;
+  --posFlip: 0;
+}
+body,
+.seaLevel {
+  font-family: ""Open Sans"", sans-serif;
+  background-color: lightblue;
+}
+.fish {
+  position: absolute;
+  top: -35%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(
+    calc(var(--coilSize) * 4) calc(var(--coilSize) / 3) 5px rgba(0, 0, 0, 0.3)
+  );
+}
+.fish .koiCoil {
+  position: absolute;
+  width: var(--coilSize);
+  height: var(--coilSize);
+  background-color: orangered;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-left: calc(var(--coilSize) / -2);
+  margin-top: calc(var(--coilSize) / -2);
+  transform: scale(var(--scaleMe), var(--scaleMe));
+  filter: contrast(200%);
+  offset-path: path(
+    ""M11.7692 229.5C14.552 200.052 7.51901 171.858 -42.8757 170.644C-105.869 169.128 -131.294 76.612 -101.695 51.5872C-72.0955 26.5625 -24.6607 -50.7867 70.5883 51.5872C165.837 153.961 27.7073 131.211 33.0199 183.157C38.3326 235.102 90.3211 195.669 139.274 223.727C188.226 251.785 207.959 299.56 139.274 316.243C70.5883 332.926 41.3685 398.9 81.9726 419.754C122.577 440.608 222 478.524 222 419.754C222 372.738 222 242.432 222 183.157C219.091 129.948 175.78 30.8091 25.8099 59.9288C-161.652 96.3284 -30.3529 119.837 25.8099 141.07C81.9726 162.303 171.529 204.769 126.751 260.506C81.9726 316.243 101.326 362.501 139.274 373.496C177.222 384.492 170.012 464.495 70.5883 462.979C-28.835 461.462 -42.8757 393.015 -42.8757 373.496C-42.8757 238.288 11.7692 293 11.7692 240.506C11.7692 208.05 11.7692 237.336 11.7692 229.5Z""
+  );
+  animation: fishAnim 20000ms linear infinite;
+  box-shadow: calc(var(--coilSize) / -2) calc(var(--coilSize) / -10) 0 white
+    inset;
+}
+
+.fish:nth-of-type(2) {
+  transform-origin: top center;
+  transform: scale(-1, 1);
+  filter: drop-shadow(
+    calc(var(--coilSize) * -4) calc(var(--coilSize) / 3) 5px rgba(0, 0, 0, 0.3)
+  );
+}
+.fish:nth-of-type(2) .koiCoil {
+  background-color: white;
+  box-shadow: calc(var(--coilSize) / -2) calc(var(--coilSize) / -10) 0 orangered
+    inset;
+}
+.fish .koiCoil:nth-of-type(15),
+.fish .koiCoil:nth-of-type(14) {
+  background-color: orangered;
+}
+.fish:nth-of-type(2) .koiCoil:nth-of-type(15),
+.fish:nth-of-type(2) .koiCoil:nth-of-type(14) {
+  background-color: white;
+}
+.fish .koiCoil:nth-of-type(15)::after {
+  content: "":"";
+  position: absolute;
+  color: black;
+  font-weight: 800;
+  text-align: center;
+  line-height: 60%;
+  font-size: calc(var(--coilSize) * 1.2);
+}
+.fish .koiCoil:nth-of-type(1)::before {
+  content: """";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 25%;
+  left: -100%;
+  border-radius: var(--coilSize);
+  background-color: white;
+  /*box-shadow: calc(var(--coilSize) / -10) calc(var(--coilSize) / -4) calc(var(--coilSize) / 3) rgba(0,0,0,.3) inset;*/
+  transform-origin: center right;
+  animation: backFlip 200ms ease-in-out alternate infinite;
+}
+.fish .koiCoil:nth-of-type(14) {
+  --scaleMe: 1.2;
+  animation-delay: calc(var(--delayCount) * 1);
+}
+.fish .koiCoil:nth-of-type(13) {
+  --scaleMe: 1.35;
+  animation-delay: calc(var(--delayCount) * 2);
+}
+.fish .koiCoil:nth-of-type(12) {
+  --scaleMe: 1.55;
+  animation-delay: calc(var(--delayCount) * 3);
+}
+.fish .koiCoil:nth-of-type(11) {
+  --scaleMe: 1.75;
+  animation-delay: calc(var(--delayCount) * 4);
+}
+.fish .koiCoil:nth-of-type(10) {
+  --scaleMe: 1.9;
+  animation-delay: calc(var(--delayCount) * 5);
+}
+.fish .koiCoil:nth-of-type(9) {
+  --scaleMe: 2;
+  animation-delay: calc(var(--delayCount) * 6);
+}
+.fish .koiCoil:nth-of-type(8) {
+  --scaleMe: 2;
+  animation-delay: calc(var(--delayCount) * 7);
+}
+.fish .koiCoil:nth-of-type(7) {
+  --scaleMe: 2;
+  animation-delay: calc(var(--delayCount) * 8);
+}
+.fish .koiCoil:nth-of-type(6) {
+  --scaleMe: 1.9;
+  animation-delay: calc(var(--delayCount) * 9);
+}
+.fish .koiCoil:nth-of-type(5) {
+  --scaleMe: 1.75;
+  animation-delay: calc(var(--delayCount) * 10);
+}
+.fish .koiCoil:nth-of-type(4) {
+  --scaleMe: 1.55;
+  animation-delay: calc(var(--delayCount) * 11);
+}
+.fish .koiCoil:nth-of-type(3) {
+  --scaleMe: 1.35;
+  animation-delay: calc(var(--delayCount) * 12);
+}
+.fish .koiCoil:nth-of-type(2) {
+  --scaleMe: 1.2;
+  animation-delay: calc(var(--delayCount) * 13);
+}
+.fish .koiCoil:nth-of-type(1) {
+  animation-delay: calc(var(--delayCount) * 14);
+}
+.fish .koiCoil:nth-of-type(12)::before,
+.fish .koiCoil:nth-of-type(12)::after {
+  content: """";
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  top: -10%;
+  left: -100%;
+  border-radius: var(--coilSize);
+  background-color: white;
+  transform-origin: center right;
+  animation: sideFlip 500ms ease-in-out alternate infinite;
+}
+.fish .koiCoil:nth-of-type(12)::after {
+  --scaleFlip: -1;
+  --posFlip: calc(var(--coilSize) * -1);
+}
+.seaLevel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+}
+@keyframes fishAnim {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+@keyframes backFlip {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+@keyframes sideFlip {
+  0% {
+    transform: scale(1, var(--scaleFlip)) translateY(var(--posFlip))rotate(80deg);
+  }
+  100% {
+    transform: scale(1, var(--scaleFlip)) translateY(var(--posFlip))rotate(20deg);
+  }
+}","2025-10-16T13:36:28.106Z",0
+"ObjectId(""68f0f765306db32434f6c527"")","ROCK 🎸","ROCK'N ROLL","<link href=""https://fonts.googleapis.com/css?family=Montserrat:900"" rel=""stylesheet"">
+<div class=""container"">
+<p class=""rock"">ROCK</p>
+<div class=""hand"">
+  <div class=""palm"">
+    <div class=""bone""></div>
+    <div class=""palm-shadow""></div>
+  </div>
+  <div class=""thumb-base""></div>
+  <div class=""mobile-shadow""></div>
+  <div class=""mobile"">
+    <div class=""screensaver""></div>
+  </div>
+  <div class=""finger-5 finger"">
+    <div class=""finger-shadow""></div>
+  </div>
+  <div class=""finger-4 finger"">
+    <div class=""fingernail""></div>
+  </div>
+  <div class=""finger-3 finger"">
+    <div class=""fingernail""></div>
+  </div>
+  <div class=""finger-2 finger"">
+    <div class=""finger-shadow""></div>
+  </div>
+  <div class=""finger-1 finger"">
+    <div class=""fingernail""></div>
+  </div>
+</div>
+</div>","* {
+	 box-sizing: border-box;
+}
+ .container {
+	 height: 100vh;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 overflow: hidden;
+	 background: #eb4f5c;
+}
+ .rock {
+	 font-family: 'Montserrat', sans-serif;
+	 font-size: 200px;
+	 margin: 0;
+	 color: #d4304b;
+	 position: absolute;
+	 left: 50%;
+	 top: 50%;
+	 transform: translate(-50%, -50%);
+}
+ .hand {
+	 position: relative;
+	 width: 100px;
+	 height: 100px;
+	 animation: rockit 0.8s ease infinite alternate;
+}
+ .palm {
+	 width: 125px;
+	 height: 140px;
+	 background: #fedcca;
+	 transform: rotate(26deg);
+	 box-shadow: inset 0 0 50px #e77f7b;
+}
+ .palm:after {
+	 content: '';
+	 background: #f2ada1;
+	 width: 20px;
+	 height: 30px;
+	 border-radius: 0 0 0 100% / 50%;
+	 position: absolute;
+	 left: -20px;
+	 bottom: 25px;
+	 z-index: 5;
+}
+ .palm:before {
+	 content: '';
+	 background-image: linear-gradient(-180deg, #e56c4c 0, #f68e60 100%);
+	 width: 100%;
+	 height: 30px;
+	 border-radius: 50%;
+	 position: absolute;
+	 left: 0;
+	 bottom: -15px;
+}
+ .mobile {
+	 width: 260px;
+	 height: 135px;
+	 background: #fc617e;
+	 border: 4px solid #705674;
+	 border-width: 4px 10px 4px 10px;
+	 border-radius: 20px;
+	 position: absolute;
+	 top: -80px;
+	 left: 80%;
+	 transform: rotate(-5deg) translatex(-50%);
+	 z-index: 1;
+	 overflow: hidden;
+}
+ .screensaver {
+	 width: 30px;
+	 height: 30px;
+	 background: transparent;
+	 border-radius: 50%;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 transform: translate(-50%, -50%);
+	 box-shadow: 0 0 0 30px #eee, 0 0 0 50px #d36868, 0 0 0 70px #71d368, 0 0 0 100px #68cfd3;
+	 animation: screensaver 0.5s linear infinite;
+}
+ .mobile-shadow {
+	 width: 100px;
+	 height: 50px;
+	 background: #c7656c;
+	 position: absolute;
+	 bottom: 30px;
+	 left: 50%;
+	 transform: rotate(-5deg) translatex(-40%);
+	 filter: blur(10px);
+}
+ .finger {
+	 position: absolute;
+	 width: 45px;
+	 background: #fedcca;
+	 border-radius: 22px;
+	 box-shadow: inset 11px -17px 40px #e77f7b;
+}
+ .finger-shadow {
+	 width: 35px;
+	 height: 50px;
+	 background: #c7656c;
+	 position: absolute;
+	 bottom: 5px;
+	 left: 50%;
+	 transform: translatex(-50%);
+	 filter: blur(10px);
+}
+ .finger-5 {
+	 height: 115px;
+	 top: -130px;
+	 left: -15px;
+	 transform: rotate(2deg);
+}
+ .finger-4 {
+	 height: 90px;
+	 top: -100px;
+	 left: 30px;
+	 transform: rotate(-8deg);
+	 z-index: 1;
+}
+ .finger-3 {
+	 height: 105px;
+	 top: -105px;
+	 left: 75px;
+	 transform: rotate(-8deg);
+	 z-index: 1;
+}
+ .finger-2 {
+	 height: 120px;
+	 top: -165px;
+	 left: 120px;
+	 transform: rotate(15deg);
+}
+ .finger-2 .finger-shadow {
+	 bottom: -5px;
+}
+ .finger-1 {
+	 height: 100px;
+	 top: -10px;
+	 right: -50px;
+	 transform: rotate(-65deg);
+	 z-index: 1;
+}
+ .finger-1 .fingernail {
+	 top: 10px;
+	 bottom: auto;
+	 transform: translatex(-50%) scale(-1);
+}
+ .thumb-base {
+	 background-image: linear-gradient(-125deg, #e97e79 42%, #fdd8c7 77%);
+	 width: 42px;
+	 height: 85px;
+	 border-radius: 17px 20px 0 79px;
+	 position: absolute;
+	 top: 26px;
+	 right: -51px;
+	 transform: rotate(50deg);
+}
+ .bone {
+	 width: 30px;
+	 height: 50px;
+	 border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+	 background: #f5e5e9;
+	 position: absolute;
+	 bottom: -50px;
+	 left: 50%;
+	 z-index: 1;
+	 transform: translatex(-50%);
+}
+ .bone:after, .bone:before {
+	 content: '';
+	 width: 40px;
+	 height: 40px;
+	 border-radius: 50%;
+	 background: #f5e5e9;
+	 box-shadow: inset 0 -5px 5px #ecd6da;
+	 position: absolute;
+	 bottom: -20px;
+}
+ .bone:after {
+	 left: -20px;
+}
+ .bone:before {
+	 right: -20px;
+}
+ .fingernail {
+	 width: 30px;
+	 height: 25px;
+	 background: rgba(253, 253, 253, .3);
+	 box-shadow: 1px 1px #e5baa7;
+	 border-radius: 0 0 50% 50%;
+	 position: absolute;
+	 bottom: 10px;
+	 left: 50%;
+	 transform: translatex(-50%);
+}
+ .palm-shadow {
+	 width: 20px;
+	 height: 70px;
+	 background: #c7656c;
+	 position: absolute;
+	 bottom: 50px;
+	 left: 50%;
+	 transform: translatex(-50%);
+	 filter: blur(10px);
+}
+ @keyframes rockit {
+	 from {
+		 transform: translatey(30px) rotate(-45deg);
+	}
+	 to {
+		 transform: translatey(30px) rotate(10deg);
+	}
+}
+ @keyframes screensaver {
+	 to {
+		 box-shadow: 0 0 0 80px #eee, 0 0 0 120px #d36868, 0 0 0 200px #71d368, 0 0 0 250px #68cfd3;
+	}
+}
+ ","2025-10-16T13:47:17.476Z",0
+"ObjectId(""68f0f871306db32434f6c529"")","Animated CSS mail button","A animated mail button with a special hover","<div class=""letter-image"">
+	<div class=""animated-mail"">
+		<div class=""back-fold""></div>
+		<div class=""letter"">
+			<div class=""letter-border""></div>
+			<div class=""letter-title""></div>
+			<div class=""letter-context""></div>
+			<div class=""letter-stamp"">
+				<div class=""letter-stamp-inner""></div>
+			</div>
+		</div>
+		<div class=""top-fold""></div>
+		<div class=""body""></div>
+		<div class=""left-fold""></div>
+	</div>
+	<div class=""shadow""></div>
+</div>","body {
+	background: #323641;
+}
+
+.letter-image {
+         background: #323641;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 width: 200px;
+	 height: 200px;
+	 -webkit-transform: translate(-50%, -50%);
+	 -moz-transform: translate(-50%, -50%);
+	 transform: translate(-50%, -50%);
+	 cursor: pointer;
+}
+ .animated-mail {
+	 position: absolute;
+	 height: 150px;
+	 width: 200px;
+	 -webkit-transition: 0.4s;
+	 -moz-transition: 0.4s;
+	 transition: 0.4s;
+}
+ .animated-mail .body {
+	 position: absolute;
+	 bottom: 0;
+	 width: 0;
+	 height: 0;
+	 border-style: solid;
+	 border-width: 0 0 100px 200px;
+	 border-color: transparent transparent #e95f55 transparent;
+	 z-index: 2;
+}
+ .animated-mail .top-fold {
+	 position: absolute;
+	 top: 50px;
+	 width: 0;
+	 height: 0;
+	 border-style: solid;
+	 border-width: 50px 100px 0 100px;
+	 -webkit-transform-origin: 50% 0%;
+	 -webkit-transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+	 -moz-transform-origin: 50% 0%;
+	 -moz-transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+	 transform-origin: 50% 0%;
+	 transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+	 border-color: #cf4a43 transparent transparent transparent;
+	 z-index: 2;
+}
+ .animated-mail .back-fold {
+	 position: absolute;
+	 bottom: 0;
+	 width: 200px;
+	 height: 100px;
+	 background: #cf4a43;
+	 z-index: 0;
+}
+ .animated-mail .left-fold {
+	 position: absolute;
+	 bottom: 0;
+	 width: 0;
+	 height: 0;
+	 border-style: solid;
+	 border-width: 50px 0 50px 100px;
+	 border-color: transparent transparent transparent #e15349;
+	 z-index: 2;
+}
+ .animated-mail .letter {
+	 left: 20px;
+	 bottom: 0px;
+	 position: absolute;
+	 width: 160px;
+	 height: 60px;
+	 background: white;
+	 z-index: 1;
+	 overflow: hidden;
+	 -webkit-transition: 0.4s 0.2s;
+	 -moz-transition: 0.4s 0.2s;
+	 transition: 0.4s 0.2s;
+}
+ .animated-mail .letter .letter-border {
+	 height: 10px;
+	 width: 100%;
+	 background: repeating-linear-gradient(-45deg, #cb5a5e, #cb5a5e 8px, transparent 8px, transparent 18px);
+}
+ .animated-mail .letter .letter-title {
+	 margin-top: 10px;
+	 margin-left: 5px;
+	 height: 10px;
+	 width: 40%;
+	 background: #cb5a5e;
+}
+ .animated-mail .letter .letter-context {
+	 margin-top: 10px;
+	 margin-left: 5px;
+	 height: 10px;
+	 width: 20%;
+	 background: #cb5a5e;
+}
+ .animated-mail .letter .letter-stamp {
+	 margin-top: 30px;
+	 margin-left: 120px;
+	 border-radius: 100%;
+	 height: 30px;
+	 width: 30px;
+	 background: #cb5a5e;
+	 opacity: 0.3;
+}
+ .shadow {
+	 position: absolute;
+	 top: 200px;
+	 left: 50%;
+	 width: 400px;
+	 height: 30px;
+	 transition: 0.4s;
+	 transform: translateX(-50%);
+	 -webkit-transition: 0.4s;
+	 -webkit-transform: translateX(-50%);
+	 -moz-transition: 0.4s;
+	 -moz-transform: translateX(-50%);
+	 border-radius: 100%;
+	 background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0));
+}
+ .letter-image:hover .animated-mail {
+	 transform: translateY(50px);
+	 -webkit-transform: translateY(50px);
+	 -moz-transform: translateY(50px);
+}
+ .letter-image:hover .animated-mail .top-fold {
+	 transition: transform 0.4s, z-index 0.2s;
+	 transform: rotateX(180deg);
+	 -webkit-transition: transform 0.4s, z-index 0.2s;
+	 -webkit-transform: rotateX(180deg);
+	 -moz-transition: transform 0.4s, z-index 0.2s;
+	 -moz-transform: rotateX(180deg);
+	 z-index: 0;
+}
+ .letter-image:hover .animated-mail .letter {
+	 height: 180px;
+}
+ .letter-image:hover .shadow {
+	 width: 250px;
+}
+ ","2025-10-16T13:51:45.870Z",0
+"ObjectId(""68f0fae8306db32434f6c52b"")","Glide to reveal","Glide to reveal the secret code","<section class=""container"">
+  <p>Glide To Reveal Secret Code</p>
+  <ul class=""code"">
+    <li tabindex=""0"" class=""digit"">
+      <span>0</span>
+    </li>
+    <li tabindex=""0"" class=""digit"">
+      <span>3</span>
+    </li>
+    <li tabindex=""0"" class=""digit"">
+      <span>4</span>
+    </li>
+    <li tabindex=""0"" class=""digit"">
+      <span>8</span>
+    </li>
+    <li tabindex=""0"" class=""digit"">
+      <span>7</span>
+    </li>
+    <li tabindex=""0"" class=""digit"">
+      <span>2</span>
+    </li>
+  </ul>
+</section>","* {
+  box-sizing: border-box;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: ""SF Pro Text"", ""SF Pro Icons"", ""AOS Icons"", ""Helvetica Neue"", Helvetica, Arial, sans-serif, system-ui;
+  background: hsl(0 0% 0%);
+  gap: 2rem;
+}
+
+.container::before {
+	--line: hsl(0 0% 95% / 0.25);
+	content: """";
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	background:
+		linear-gradient(90deg, var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin,
+		linear-gradient(var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin;
+	mask: linear-gradient(-15deg, transparent 30%, white);
+	top: 0;
+	z-index: -1;
+}
+
+section {
+  display: grid;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+section p {
+  margin: 0;
+  font-size: 2.25rem;
+  color: hsl(0 0% 40%);
+  text-align: center;
+  background: linear-gradient(hsl(0 0% 80%), hsl(0 0% 50%));
+  color: transparent;
+  background-clip: text;
+}
+
+.code {
+  font-size: 3rem;
+  display: flex;
+  flex-wrap: nowrap;
+  color: hsl(0 0% 100%);
+  border-radius: 1rem;
+  background: hsl(0 0% 6%);
+  justify-content: center;
+  box-shadow: 0 1px hsl(0 0% 100% / 0.25) inset;
+}
+
+.code:hover {
+  cursor: grab;
+}
+
+.digit {
+  display: flex;
+  height: 100%;
+  padding: 5.5rem 1rem;
+}
+
+.digit:focus-visible {
+  outline-color: hsl(0 0% 50% / 0.25);
+  outline-offset: 1rem;
+}
+
+.digit span {
+  scale: calc(var(--active, 0) + 0.5);
+  filter: blur(calc((1 - var(--active, 0)) * 1rem));
+  transition: scale calc(((1 - var(--active, 0)) + 0.2) * 1s), filter calc(((1 - var(--active, 0)) + 0.2) * 1s);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.digit:first-of-type {
+  padding-left: 5rem;
+}
+.digit:last-of-type {
+  padding-right: 5rem;
+}
+
+:root {
+  --lerp-0: 1; /* === sin(90deg) */
+  --lerp-1: calc(sin(50deg));
+  --lerp-2: calc(sin(45deg));
+  --lerp-3: calc(sin(35deg));
+  --lerp-4: calc(sin(25deg));
+  --lerp-5: calc(sin(15deg));
+}
+
+.digit:is(:hover, :focus-visible) {
+  --active: var(--lerp-0);
+}
+.digit:is(:hover, :focus-visible) + .digit,
+.digit:has(+ .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-1);
+}
+.digit:is(:hover, :focus-visible) + .digit + .digit,
+.digit:has(+ .digit + .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-2);
+}
+.digit:is(:hover, :focus-visible) + .digit + .digit + .digit,
+.digit:has(+ .digit + .digit + .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-3);
+}
+.digit:is(:hover, :focus-visible) + .digit + .digit + .digit + .digit,
+.digit:has(+ .digit + .digit + .digit + .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-4);
+}
+.digit:is(:hover, :focus-visible) + .digit + .digit + .digit + .digit + .digit,
+.digit:has(+ .digit + .digit + .digit + .digit + .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-5);
+}","2025-10-16T14:02:16.301Z",0
+"ObjectId(""68f0ff54f8c7c869efab435a"")","Newton’s cradle","wow so coooooool","<div class=""pendulum"">
+  <div class=""pendulum_box"">
+    <div class=""ball first""></div>
+      <div class=""ball""></div>
+      <div class=""ball""></div>
+      <div class=""ball""></div>
+      <div class=""ball last""></div>
+  </div>
+</div>","body{
+  background-color: #98cfb2;
+}
+.pendulum{
+  position:absolute; 
+  width: 220px;
+  height: 180px;
+  background-color: #f8c6cf;
+  top:50%;
+  left:  50%;
+  border-radius: 5%;
+  align-items: center;
+  border-top: 15px solid #eee7d5;
+  transform: translate(-50%, -50%);
+  }
+.pendulum_box{
+  display: flex;
+  padding: 120px 0 0 10px;
+  position: absolute;
+  flex: 1;
+}
+.ball{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #455681;
+  position: relative;
+  transform-origin: 50% -300%;
+  
+}
+  .ball::before{
+    content: '';
+    width: 2px;
+    height: 120px;
+    background-color: #fffeff;
+    left: 18px;
+    top: -120px;
+    position: absolute;
+  }
+
+.ball.first{
+  animation: firstball .9s alternate ease-in infinite;
+}
+
+@keyframes firstball{
+  0%{
+    transform: rotate(35deg);
+  }
+  50%{
+    transform: rotate(0deg);
+  }
+}
+
+.ball.last{
+  animation: lastball .9s alternate ease-out infinite;
+}
+
+@keyframes lastball{
+  50%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(-35deg);
+  }
+}","2025-10-16T14:21:08.800Z",0
+"ObjectId(""68f1ec15f8c7c869efab4360"")","Climbing - cube ","A cube with one dream, climbing Everest like Inoxtag","<body>
+		<div class=""container"">
+			<div class=""box"">
+				<div class=""cube""></div>
+			</div>
+			
+		</div>
+	</body>","*
+			{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body
+			{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				background: #000;
+				overflow: hidden;
+			}
+
+.container
+			{
+				position: relative;
+				width: 100%;
+				transform: rotate(-35deg);
+			}
+			.container .box
+			{
+				position: relative;
+				left: -100px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: clac(100% + 400px);
+				-webkit-box-reflect: below 1px linear-gradient( transparent, #000);
+				animation: animatesurface 1.5s ease-in-out infinite;
+
+			}
+			@keyframes animatesurface
+			{
+				0%
+				{
+					transform: translateX(0);
+				}
+				100%
+				{
+					transform: translateX(-200px);
+				}
+			}
+			.container .box .cube
+			{
+				position: relative;
+				width: 200px;
+				height: 200px;
+				background: #03e9f4;
+				box-shadow: 0 0 5px rgba(3,233,244,1),
+				0 0 25px rgba(3,233,244,1),
+				0 0 50px rgba(3,233,244,1),
+				0 0 150px rgba(3,233,244,1)
+		;
+				transform-origin: bottom right;
+				animation: animate 1.5s  ease-in-out infinite;
+			}
+			@keyframes animate
+			{
+				0%
+				{ 
+					transform: rotate(0deg);
+					
+				}
+				60%,70%,80%,100%
+				{
+					transform: rotate(90deg);
+				
+				}
+				65%
+				{
+					transform: rotate(85deg);
+				}
+				75%
+				{
+					transform: rotate(87.5deg);
+				}
+			}","2025-10-17T07:11:17.772Z",0
+"ObjectId(""68f209f3f5472620bd9654de"")","cutie cutie cundle","cutie","<!DOCTYPE html>
+<html lang=""en"" >
+<head>
+  <meta charset=""UTF-8"">
+  <title>Candle Fun (Pure CSS Animation)</title>
+  <link rel=""stylesheet"" href=""./style.css"">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class=""wrapper"">
+  <div class=""candles"">
+    <div class=""light__wave""></div>
+    <div class=""candle1"">
+      <div class=""candle1__body"">
+        <div class=""candle1__eyes"">
+          <span class=""candle1__eyes-one""></span>
+          <span class=""candle1__eyes-two""></span>
+        </div>
+        <div class=""candle1__mouth""></div>
+      </div>
+      <div class=""candle1__stick""></div>
+    </div>
+    
+    <div class=""candle2"">
+      <div class=""candle2__body"">
+        <div class=""candle2__eyes"">
+          <div class=""candle2__eyes-one""></div>
+          <div class=""candle2__eyes-two""></div>
+        </div>
+      </div>
+      <div class=""candle2__stick""></div>
+    </div>
+    <div class=""candle2__fire""></div>
+    <div class=""sparkles-one""></div>
+    <div class=""sparkles-two""></div>
+    <div class=""candle__smoke-one"">
+
+    </div>
+    <div class=""candle__smoke-two"">
+
+    </div>
+    
+  </div>
+  <div class=""floor"">
+  </div>
+  
+
+</div>
+<!-- partial -->
+  
+</body>
+</html>
+","body {
+  background-color: #FFF;
+  animation: change-background 3s infinite linear;
+}
+
+.wrapper {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: scale(1.5, 1.5) translate(-50%, -50%);
+}
+
+.floor {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 350px;
+  height: 5px;
+  background: #673C63;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 2px 5px #111;
+  z-index: 2;
+}
+
+.candles {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 250px;
+  height: 150px;
+  transform: translate(-50%, -100%);
+  z-index: 1;
+}
+
+.candle1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 35px;
+  height: 100px;
+  background: #fff;
+  border: 3px solid #673C63;
+  border-bottom: 0px;
+  border-radius: 3px;
+  transform-origin: center right;
+  transform: translate(60%, -25%);
+  box-shadow: -2px 0px 0px #95c6f2 inset;
+  animation: expand-body 3s infinite linear;
+}
+
+.candle1__stick, .candle2__stick {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  width: 3px;
+  height: 15px;
+  background: #673C63;
+  border-radius: 8px;
+  transform: translate(-50%, -100%);
+}
+
+.candle2__stick {
+  height: 12px;
+  transform-origin: bottom center;
+  animation: stick-animation 3s infinite linear;
+}
+
+.candle1__eyes, .candle2__eyes {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  width: 35px;
+  height: 30px;
+  transform: translate(-50%, 0%);
+}
+
+.candle1__eyes-one {
+  position: absolute;
+  left: 30%;
+  top: 20%;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background: #673C63;
+  transform: translate(-70%, 0%);
+  animation: blink-eyes 3s infinite linear;
+}
+
+.candle1__eyes-two {
+  position: absolute;
+  left: 70%;
+  top: 20%;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background: #673C63;
+  transform: translate(-70%, 0%);
+  animation: blink-eyes 3s infinite linear;
+}
+
+.candle1__mouth {
+  position: absolute;
+  left: 40%;
+  top: 20%;
+  width: 0px;
+  height: 0px;
+  border-radius: 20px;
+  background: #673C63;
+  transform: translate(-50%, -50%);
+  animation: uff 3s infinite linear;
+}
+
+.candle__smoke-one {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  width: 30px;
+  height: 3px;
+  background: grey;
+  transform: translate(-50%, -50%);
+  animation: move-left 3s infinite linear;
+}
+
+.candle__smoke-two {
+  position: absolute;
+  left: 30%;
+  top: 40%;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: grey;
+  transform: translate(-50%, -50%);
+  animation: move-top 3s infinite linear;
+}
+
+.candle2 {
+  position: absolute;
+  left: 20%;
+  top: 65%;
+  width: 42px;
+  height: 60px;
+  background: #fff;
+  border: 3px solid #673C63;
+  border-bottom: 0px;
+  border-radius: 3px;
+  transform: translate(60%, -15%);
+  transform-origin: center right;
+  box-shadow: -2px 0px 0px #95c6f2 inset;
+  animation: shake-left 3s infinite linear;
+}
+
+.candle2__eyes-one {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  border: 0px solid #673C63;
+  border-radius: 100%;
+  float: left;
+  background: #673C63;
+  transform: translate(-80%, 0%);
+  animation: changeto-lower 3s infinite linear;
+}
+
+.candle2__eyes-two {
+  position: absolute;
+  left: 70%;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  border: 0px solid #673C63;
+  border-radius: 100%;
+  float: left;
+  background: #673C63;
+  transform: translate(-80%, 0%);
+  animation: changeto-greater 3s infinite linear;
+}
+
+.light__wave {
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  z-index: 0;
+  transform: translate(-25%, -50%) scale(2.5, 2.5);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: expand-light 3s infinite linear;
+}
+
+.candle2__fire {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  display: block;
+  width: 16px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: #FF9800;
+  transform: translate(-50%, -50%);
+  animation: dance-fire 3s infinite linear;
+}
+
+@keyframes blink-eyes {
+  0%,35% {
+    opacity: 1;
+    transform: translate(-70%, 0%);
+  }
+  36%,39% {
+    opacity: 0;
+    transform: translate(-70%, 0%);
+  }
+  40% {
+    opacity: 1;
+    transform: translate(-70%, 0%);
+  }
+  50%,65% {
+    transform: translate(-140%, 0%);
+  }
+  66% {
+    transform: translate(-70%, 0%);
+  }
+}
+@keyframes expand-body {
+  0%,40% {
+    transform: scale(1, 1) translate(60%, -25%);
+  }
+  45%,55% {
+    transform: scale(1.1, 1.1) translate(60%, -28%);
+  }
+  60% {
+    transform: scale(0.89, 0.89) translate(60%, -25%);
+  }
+  65% {
+    transform: scale(1, 1) translate(60%, -25%);
+  }
+  70% {
+    transform: scale(0.95, 0.95) translate(60%, -25%);
+  }
+  75% {
+    transform: scale(1, 1) translate(60%, -25%);
+  }
+}
+@keyframes uff {
+  0%,40% {
+    width: 0px;
+    height: 0px;
+  }
+  50%,54% {
+    width: 15px;
+    height: 15px;
+    left: 30%;
+  }
+  59% {
+    width: 5px;
+    height: 5px;
+    left: 20%;
+  }
+  62% {
+    width: 2px;
+    height: 2px;
+    left: 20%;
+  }
+  67% {
+    width: 0px;
+    height: 0px;
+    left: 30%;
+  }
+}
+@keyframes change-background {
+  0%,59%,98%,100% {
+    background: #FFF;
+  }
+  61%,97% {
+    background: #000;
+  }
+}
+@keyframes move-left {
+  0%,59%,100% {
+    width: 0px;
+    left: 40%;
+  }
+  60% {
+    width: 30px;
+    left: 30%;
+  }
+  68% {
+    width: 0px;
+    left: 20%;
+  }
+}
+@keyframes move-top {
+  0%,64%,100% {
+    width: 0px;
+    height: 0px;
+    top: 0%;
+  }
+  65% {
+    width: 10px;
+    height: 10px;
+    top: 40%;
+    left: 40%;
+  }
+  80% {
+    width: 0px;
+    height: 0px;
+    top: 20%;
+  }
+}
+@keyframes shake-left {
+  0%,40% {
+    left: 20%;
+    transform: translate(60%, -15%);
+  }
+  50%,54% {
+    left: 20%;
+    transform: translate(60%, -15%);
+  }
+  59% {
+    left: 20%;
+    transform: translate(60%, -15%);
+  }
+  62% {
+    left: 18%;
+    transform: translate(60%, -15%);
+  }
+  65% {
+    left: 21%;
+    transform: translate(60%, -15%);
+  }
+  67% {
+    left: 20%;
+    transform: translate(60%, -15%);
+  }
+  75% {
+    left: 20%;
+    transform: scale(1.15, 0.85) translate(60%, -15%);
+    background: #fff;
+    border-color: #673C63;
+  }
+  91% {
+    left: 20%;
+    transform: scale(1.18, 0.82) translate(60%, -10%);
+    background: #F44336;
+    border-color: #F44336;
+    box-shadow: -2px 0px 0px #F44336 inset;
+  }
+  92% {
+    left: 20%;
+    transform: scale(0.85, 1.15) translate(60%, -15%);
+  }
+  95% {
+    left: 20%;
+    transform: scale(1.05, 0.95) translate(60%, -15%);
+  }
+  97% {
+    left: 20%;
+    transform: scale(1, 1) translate(60%, -15%);
+  }
+}
+@keyframes stick-animation {
+  0%,40% {
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -100%);
+  }
+  50%,54% {
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -100%);
+  }
+  59% {
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -100%);
+  }
+  62% {
+    left: 50%;
+    top: 0%;
+    transform: rotateZ(-15deg) translate(-50%, -100%);
+  }
+  65% {
+    left: 50%;
+    top: 0%;
+    transform: rotateZ(15deg) translate(-50%, -100%);
+  }
+  70% {
+    left: 50%;
+    top: 0%;
+    transform: rotateZ(-5deg) translate(-50%, -100%);
+  }
+  72% {
+    left: 50%;
+    top: 0%;
+    transform: rotateZ(5deg) translate(-50%, -100%);
+  }
+  74%,84% {
+    left: 50%;
+    top: 0%;
+    transform: rotateZ(0deg) translate(-50%, -100%);
+  }
+  85% {
+    transform: rotateZ(180deg) translate(0%, 120%);
+  }
+  92% {
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -100%);
+  }
+}
+@keyframes expand-light {
+  10%,29%,59%,89% {
+    transform: translate(-25%, -50%) scale(0, 0);
+    border: 2px solid rgba(255, 255, 255, 0);
+  }
+  90%,20%,50% {
+    transform: translate(-25%, -50%) scale(1, 1);
+  }
+  95%,96%,26%,27%,56%,57% {
+    transform: translate(-25%, -50%) scale(2, 2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+  0%,28%,58%,100% {
+    transform: translate(-25%, -50%) scale(2.5, 2.5);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+}
+@keyframes dance-fire {
+  59%,89% {
+    left: 40%;
+    width: 0px;
+    height: 0px;
+  }
+  90%,0%,7%,15%,23%,31%,39%,47%,55% {
+    left: 40.8%;
+    width: 16px;
+    height: 20px;
+    background: #FFC107;
+  }
+  94%,3%,11%,19%,27%,35%,43%,51%,58% {
+    left: 41.2%;
+    width: 16px;
+    height: 20px;
+    background: #FF9800;
+  }
+}
+@keyframes changeto-lower {
+  0%,70%,90% {
+    padding: 0px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #673C63;
+    border-width: 0 0 0 0;
+    border: 0px solid #673C63;
+    transform: translate(-90%, 0%);
+  }
+  71%,89% {
+    background: none;
+    border: solid #673C63;
+    border-radius: 0px;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 1px;
+    float: left;
+    transform-origin: bottom left;
+    transform: rotate(-45deg) translate(-50%, -65%);
+    -webkit-transform: rotate(-45deg) translate(-50%, -65%);
+  }
+}
+@keyframes changeto-greater {
+  0%,70%,90% {
+    top: 50%;
+    padding: 0px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #673C63;
+    border-width: 0 0 0 0;
+    border: 0px solid #673C63;
+    transform: translate(-80%, 0%);
+  }
+  71%,89% {
+    top: 30%;
+    background: none;
+    border: solid #673C63;
+    border-radius: 0px;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 1px;
+    float: left;
+    transform-origin: bottom left;
+    transform: rotate(135deg) translate(-80%, 20%);
+    -webkit-transform: rotate(135deg) translate(-80%, 20%);
+  }
+}","2025-10-17T09:18:43.692Z",0
+"ObjectId(""68f20ec584f9961cdc2eca6f"")","Speedy truck","Very fast","<div class=""loop-wrapper"">
+  <div class=""mountain""></div>
+  <div class=""hill""></div>
+  <div class=""tree""></div>
+  <div class=""tree""></div>
+  <div class=""tree""></div>
+  <div class=""rock""></div>
+  <div class=""truck""></div>
+  <div class=""wheels""></div>
+</div> ","body { 
+  background: #009688;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+.loop-wrapper {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  width: 600px;
+  height: 250px;
+  overflow: hidden;
+  border-bottom: 3px solid #fff;
+  color: #fff;
+}
+.mountain {
+  position: absolute;
+  right: -900px;
+  bottom: -20px;
+  width: 2px;
+  height: 2px;
+  box-shadow: 
+    0 0 0 50px #4DB6AC,
+    60px 50px 0 70px #4DB6AC,
+    90px 90px 0 50px #4DB6AC,
+    250px 250px 0 50px #4DB6AC,
+    290px 320px 0 50px #4DB6AC,
+    320px 400px 0 50px #4DB6AC
+    ;
+  transform: rotate(130deg);
+  animation: mtn 20s linear infinite;
+}
+.hill {
+  position: absolute;
+  right: -900px;
+  bottom: -50px;
+  width: 400px;
+  border-radius: 50%;
+  height: 20px;
+  box-shadow: 
+    0 0 0 50px #4DB6AC,
+    -20px 0 0 20px #4DB6AC,
+    -90px 0 0 50px #4DB6AC,
+    250px 0 0 50px #4DB6AC,
+    290px 0 0 50px #4DB6AC,
+    620px 0 0 50px #4DB6AC;
+  animation: hill 4s 2s linear infinite;
+}
+.tree, .tree:nth-child(2), .tree:nth-child(3) {
+  position: absolute;
+  height: 100px; 
+  width: 35px;
+  bottom: 0;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/tree.svg) no-repeat;
+}
+.rock {
+  margin-top: -17%;
+  height: 2%; 
+  width: 2%;
+  bottom: -2px;
+  border-radius: 20px;
+  position: absolute;
+  background: #ddd;
+}
+.truck, .wheels {
+  transition: all ease;
+  width: 85px;
+  margin-right: -60px;
+  bottom: 0px;
+  right: 50%;
+  position: absolute;
+  background: #eee;
+}
+.truck {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/truck.svg) no-repeat;
+  background-size: contain;
+  height: 60px;
+}
+.truck:before {
+  content: "" "";
+  position: absolute;
+  width: 25px;
+  box-shadow:
+    -30px 28px 0 1.5px #fff,
+     -35px 18px 0 1.5px #fff;
+}
+.wheels {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/wheels.svg) no-repeat;
+  height: 15px;
+  margin-bottom: 0;
+}
+
+.tree  { animation: tree 3s 0.000s linear infinite; }
+.tree:nth-child(2)  { animation: tree2 2s 0.150s linear infinite; }
+.tree:nth-child(3)  { animation: tree3 8s 0.050s linear infinite; }
+.rock  { animation: rock 4s   -0.530s linear infinite; }
+.truck  { animation: truck 4s   0.080s ease infinite; }
+.wheels  { animation: truck 4s   0.001s ease infinite; }
+.truck:before { animation: wind 1.5s   0.000s ease infinite; }
+
+
+@keyframes tree {
+  0%   { transform: translate(1350px); }
+  50% {}
+  100% { transform: translate(-50px); }
+}
+@keyframes tree2 {
+  0%   { transform: translate(650px); }
+  50% {}
+  100% { transform: translate(-50px); }
+}
+@keyframes tree3 {
+  0%   { transform: translate(2750px); }
+  50% {}
+  100% { transform: translate(-50px); }
+}
+
+@keyframes rock {
+  0%   { right: -200px; }
+  100% { right: 2000px; }
+}
+@keyframes truck {
+  0%   { }
+  6%   { transform: translateY(0px); }
+  7%   { transform: translateY(-6px); }
+  9%   { transform: translateY(0px); }
+  10%   { transform: translateY(-1px); }
+  11%   { transform: translateY(0px); }
+  100%   { }
+}
+@keyframes wind {
+  0%   {  }
+  50%   { transform: translateY(3px) }
+  100%   { }
+}
+@keyframes mtn {
+  100% {
+    transform: translateX(-2000px) rotate(130deg);
+  }
+}
+@keyframes hill {
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+
+
+
+
+","2025-10-17T09:39:17.729Z",0
