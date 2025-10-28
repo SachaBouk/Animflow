@@ -36,8 +36,8 @@
 
           <div class="controls">
             <button class="back-btn" @click="goBack">Back</button>
-            <button type="button" @click="runCode">▶️ Run</button>
-            <button type="button" @click="pauseAnimation">⏸ Pause</button>
+            <button type="button" @click="runCode">Run</button>
+            <button type="button" @click="pauseAnimation">Pause</button>
           </div>
       </div>
       <iframe id="result"></iframe>
